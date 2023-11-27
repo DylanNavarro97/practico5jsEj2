@@ -66,10 +66,14 @@ class Persona {
 form.addEventListener('submit', (e) => {
     e.preventDefault()
 
-    persona = new Persona(nombre.value, edad.value, dni.value, sexo.value, peso.value, altura.value, anioDeNacimiento.value)
-    botonGeneracion.className = 'btn btn-success my-2'
-    botonEdad.className ='btn btn-success my-2'
-    botonInfo.className = 'btn btn-success my-2'
+    if (nombre.value.trim() !== ''){
+        persona = new Persona(nombre.value, edad.value, dni.value, sexo.value, peso.value, altura.value, anioDeNacimiento.value)
+        botonGeneracion.className = 'btn btn-success my-2'
+        botonEdad.className ='btn btn-success my-2'
+        botonInfo.className = 'btn btn-success my-2'
+    } else {
+        alert("Ingresa datos válidos en el nombre")
+    }
 })
 
 botonGeneracion.addEventListener('click', () => {
